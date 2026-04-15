@@ -43,6 +43,12 @@
 .product__headline{font-size:clamp(3rem,6vw,3.75rem);font-weight:900;text-transform:uppercase;letter-spacing:-0.03em;margin-bottom:2rem;line-height:1}
 .product__body{font-size:1.25rem;margin-bottom:3rem;font-weight:500;line-height:1.5;color:#dee4df}
 
+/* Landscape hero overrides — no conflict on this page (abstract image) but reduce height */
+@media(orientation:landscape) and (max-height:500px){
+  .builtfor{min-height:40vh}
+  .builtfor__text{font-size:clamp(2.5rem,8vw,5rem)}
+}
+
 @media(min-width:768px){
   .hero-inside{padding:4rem 6rem 8rem}
   .clinical{padding:6rem}
@@ -61,7 +67,7 @@
 
 <nav class="nav">
   <a href="index.html" class="nav__logo">
-    <img src="images/logo.png" alt="HANGOVR 180"/>
+    <img src="images/logo.svg" alt="HANGOVR 180"/>
   </a>
   <div class="nav__links">
     <a href="doa180.html" class="nav__link">DO A 180</a>
@@ -84,7 +90,11 @@
 
 <!-- S1: Built for Before hero image section -->
 <section class="builtfor">
-  <img src="images/hero-builtforbefore.jpg" alt="Golden sparkle light effect" class="builtfor__img"/>
+  <picture>
+    <source media="(max-width:767px)" srcset="images/hero-builtforbefore-mobile-portrait.webp"/>
+    <source media="(max-width:1023px) and (orientation:landscape)" srcset="images/hero-builtforbefore-mobile-landscape.webp"/>
+    <img src="images/hero-builtforbefore-desktop.webp" alt="Golden sparkle light effect" class="builtfor__img"/>
+  </picture>
   <h2 class="builtfor__text">BUILT FOR<br/>BEFORE.</h2>
 </section>
 
@@ -138,7 +148,10 @@
 <section class="product">
   <div class="product__frame">
     <div class="product__image">
-      <img src="images/product-pouch.jpg" alt="HANGOVR 180 product pouch"/>
+      <picture>
+        <source media="(max-width:1023px)" srcset="images/product-pouch-mobile.webp"/>
+        <img src="images/product-pouch-desktop.webp" alt="HANGOVR 180 product pouch" loading="lazy"/>
+      </picture>
     </div>
     <div class="product__content">
       <h3 class="product__headline">THE PROTOCOL.</h3>
@@ -150,7 +163,7 @@
 </main>
 
 <footer class="footer">
-  <div class="footer__brand"><img src="images/footer-logo.png" alt="HANGOVR 180" class="footer__logo-img"/></div>
+  <div class="footer__brand"><img src="images/footer-logo.svg" alt="HANGOVR 180" class="footer__logo-img"/></div>
   <div class="footer__links">
     <a href="#">Privacy Policy</a>
     <a href="#">Terms</a>

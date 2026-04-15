@@ -1,4 +1,4 @@
-/* HANGOVR 180 — Global Styles (v4.0) */
+/* HANGOVR 180 — Global Styles (v4.1) */
 /* Shared across all 6 pages: resets, nav, buttons, footer, mobile menu */
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -44,9 +44,14 @@ input{font-family:'Montserrat',sans-serif}
 .footer__links a:hover{text-decoration:underline;text-decoration-thickness:4px}
 .footer__copy{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:#FFD800}
 
-@media(min-width:768px){
+/* Nav breakpoint: 1024px (keeps hamburger on landscape phones) */
+@media(min-width:1024px){
   .nav__links{display:flex}
   .nav__mobile-btn{display:none}
+}
+
+/* Footer breakpoint: 768px (row layout works fine at landscape phone widths) */
+@media(min-width:768px){
   .footer{flex-direction:row;justify-content:space-between;align-items:center;padding:4rem 3rem}
   .footer__links a{font-size:0.75rem}
 }

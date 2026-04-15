@@ -58,6 +58,20 @@
 .email__input:focus{outline:none;box-shadow:inset 0 -4px 0 #303633}
 .email__fine{font-size:0.75rem;font-weight:900;text-transform:uppercase;letter-spacing:0.1em;color:rgba(48,54,51,0.6)}
 
+/* Landscape hero overrides */
+@media(orientation:landscape) and (max-height:500px){
+  .hero{min-height:50vh}
+  .hero__headline{font-size:clamp(2rem,6vw,3.5rem)}
+  .hero__sub{font-size:clamp(1rem,2.5vw,1.25rem)}
+  .hero__img{object-position:center 30%}
+  .hero__content{padding-bottom:2rem}
+}
+
+/* Portrait subtext sizing */
+@media(max-width:1023px){
+  .hero__content{padding-bottom:3rem}
+}
+
 @media(min-width:768px){
   .hero__content{padding:6rem}
   .hero__sub{font-size:clamp(1.25rem,3vw,1.875rem)}
@@ -80,7 +94,7 @@
 
 <nav class="nav">
   <a href="index.html" class="nav__logo">
-    <img src="images/logo.png" alt="HANGOVR 180"/>
+    <img src="images/logo.svg" alt="HANGOVR 180"/>
   </a>
   <div class="nav__links">
     <a href="doa180.html" class="nav__link">DO A 180</a>
@@ -102,7 +116,11 @@
 <main>
 
 <section class="hero">
-  <img src="images/hero-home.jpg" alt="Friends at Austin beer garden at golden hour" class="hero__img"/>
+  <picture>
+    <source media="(max-width:767px)" srcset="images/hero-home-mobile-portrait.webp"/>
+    <source media="(max-width:1023px) and (orientation:landscape)" srcset="images/hero-home-mobile-landscape.webp"/>
+    <img src="images/hero-home-desktop.webp" alt="Friends at Austin beer garden at golden hour" class="hero__img"/>
+  </picture>
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <h1 class="hero__headline">YOU LOVE<br/>GOING OUT.</h1>
@@ -118,7 +136,10 @@
     </div>
     <div class="tension__img-wrap">
       <div class="tension__frame">
-        <img src="images/tension-woman.jpg" alt="Woman preparing for the night with HANGOVR 180"/>
+        <picture>
+          <source media="(max-width:1023px)" srcset="images/tension-woman-mobile.webp"/>
+          <img src="images/tension-woman-desktop.webp" alt="Woman preparing for the night with HANGOVR 180" loading="lazy"/>
+        </picture>
       </div>
     </div>
   </div>
@@ -133,7 +154,10 @@
       <div><a href="doa180.html" class="btn-dark">DO A 180</a></div>
     </div>
     <div class="pack__image">
-      <img src="images/pack-reveal-capsules.jpg" alt="Close-up of HANGOVR 180 capsules"/>
+      <picture>
+        <source media="(max-width:1023px)" srcset="images/pack-reveal-capsules-mobile.webp"/>
+        <img src="images/pack-reveal-capsules-desktop.webp" alt="Close-up of HANGOVR 180 capsules" loading="lazy"/>
+      </picture>
     </div>
   </div>
 </section>
@@ -141,7 +165,10 @@
 <section class="aboard">
   <div class="aboard__grid">
     <div class="aboard__image">
-      <img src="images/aboard-liquorstore.jpg" alt="HANGOVR 180 A-board outside a liquor store"/>
+      <picture>
+        <source media="(max-width:1023px)" srcset="images/aboard-liquorstore-mobile.webp"/>
+        <img src="images/aboard-liquorstore-desktop.webp" alt="HANGOVR 180 A-board outside a liquor store" loading="lazy"/>
+      </picture>
     </div>
     <div class="aboard__content">
       <span class="aboard__headline-light">YOU CAN</span>
@@ -166,7 +193,7 @@
 </main>
 
 <footer class="footer">
-  <div class="footer__brand"><img src="images/footer-logo.png" alt="HANGOVR 180" class="footer__logo-img"/></div>
+  <div class="footer__brand"><img src="images/footer-logo.svg" alt="HANGOVR 180" class="footer__logo-img"/></div>
   <div class="footer__links">
     <a href="#">Privacy Policy</a>
     <a href="#">Terms</a>

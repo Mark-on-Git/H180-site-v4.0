@@ -74,6 +74,14 @@
 .bento__stat-light{font-weight:400}
 .bento__stat-sub{color:rgba(255,255,255,0.8);font-weight:700;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.05em;margin-top:1rem}
 
+/* Landscape hero overrides — worst case page: text covers runner's face */
+@media(orientation:landscape) and (max-height:500px){
+  .hero{min-height:50vh}
+  .hero__headline{font-size:clamp(2rem,6vw,3.5rem)}
+  .hero__sub{font-size:clamp(1rem,2.5vw,1.25rem)}
+  .hero__content{align-items:flex-start;max-width:50%;padding:1rem 2rem}
+}
+
 /* 2-col portraits at 480px for mobile scroll reduction */
 @media(min-width:480px) and (max-width:767px){
   .portraits__grid{grid-template-columns:1fr 1fr;gap:2rem}
@@ -81,7 +89,7 @@
 }
 
 @media(min-width:768px){
-  .hero__content{padding:4rem}
+  .hero__content{padding:4rem;max-width:72rem}
   .identity{padding:6rem 4rem}
   .identity__grid{grid-template-columns:1fr 1fr;gap:4rem}
   .portraits{padding:6rem 4rem}
@@ -101,7 +109,7 @@
 
 <nav class="nav">
   <a href="index.html" class="nav__logo">
-    <img src="images/logo.png" alt="HANGOVR 180"/>
+    <img src="images/logo.svg" alt="HANGOVR 180"/>
   </a>
   <div class="nav__links">
     <a href="doa180.html" class="nav__link">DO A 180</a>
@@ -123,7 +131,11 @@
 <main>
 
 <section class="hero">
-  <img src="images/hero-whos-in.jpg" alt="Woman running with Austin skyline at golden hour" class="hero__img"/>
+  <picture>
+    <source media="(max-width:767px)" srcset="images/hero-whos-in-mobile-portrait.webp"/>
+    <source media="(max-width:1023px) and (orientation:landscape)" srcset="images/hero-whos-in-mobile-landscape.webp"/>
+    <img src="images/hero-whos-in-desktop.webp" alt="Woman running with Austin skyline at golden hour" class="hero__img"/>
+  </picture>
   <div class="hero__content">
     <h1 class="hero__headline">THESE ARE<br/>TOMORROW<br/>PEOPLE.</h1>
     <p class="hero__sub">They <em>figured something out</em>.</p>
@@ -151,7 +163,7 @@
 <section class="portraits">
   <div class="portraits__grid">
     <div class="portrait">
-      <div class="portrait__img-wrap"><img src="images/portrait-marcus.jpg" alt="Marcus on his porch with morning coffee"/></div>
+      <div class="portrait__img-wrap"><img src="images/portrait-marcus.webp" alt="Marcus on his porch with morning coffee" loading="lazy"/></div>
       <div class="portrait__caption">
         <h3 class="portrait__quote">&ldquo;BOUNCE BACK? I NEVER LEFT!&rdquo;</h3>
         <p class="portrait__name">Marcus / 48 / General Contractor</p>
@@ -162,10 +174,10 @@
         <h3 class="portrait__quote">&ldquo;HERE FOR ALL OF IT, EVERY TIME.&rdquo;</h3>
         <p class="portrait__name">Sarah / 38 / Mom</p>
       </div>
-      <div class="portrait__img-wrap"><img src="images/portrait-sarah.jpg" alt="Sarah at farmers market with her child"/></div>
+      <div class="portrait__img-wrap"><img src="images/portrait-sarah.webp" alt="Sarah at farmers market with her child" loading="lazy"/></div>
     </div>
     <div class="portrait">
-      <div class="portrait__img-wrap"><img src="images/portrait-rowleys.jpg" alt="The Rowleys laughing at brunch"/></div>
+      <div class="portrait__img-wrap"><img src="images/portrait-rowleys.webp" alt="The Rowleys laughing at brunch" loading="lazy"/></div>
       <div class="portrait__caption">
         <h3 class="portrait__quote">&ldquo;SUNDAYS ARE OURS AGAIN.&rdquo;</h3>
         <p class="portrait__name">The Rowleys / Early 50s / Founders</p>
@@ -176,7 +188,7 @@
         <h3 class="portrait__quote">&ldquo;I'LL TAKE THE EDGE, IT'S EASY, IT WORKS.&rdquo;</h3>
         <p class="portrait__name">Dr. Fumi / 43 / PhD Researcher</p>
       </div>
-      <div class="portrait__img-wrap"><img src="images/portrait-drfumi.jpg" alt="Dr. Fumi portrait"/></div>
+      <div class="portrait__img-wrap"><img src="images/portrait-drfumi.webp" alt="Dr. Fumi portrait" loading="lazy"/></div>
     </div>
   </div>
 </section>
@@ -200,7 +212,7 @@
 </main>
 
 <footer class="footer">
-  <div class="footer__brand"><img src="images/footer-logo.png" alt="HANGOVR 180" class="footer__logo-img"/></div>
+  <div class="footer__brand"><img src="images/footer-logo.svg" alt="HANGOVR 180" class="footer__logo-img"/></div>
   <div class="footer__links">
     <a href="#">Privacy Policy</a>
     <a href="#">Terms</a>
